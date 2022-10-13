@@ -29,7 +29,8 @@ class View: UIViewController {
         view.backgroundColor = .systemMint
         view.addSubview(tableView)
         
-        tableView.frame = view.bounds
+        tableView.constraint(by: [.centerX:0,.centerY:0])
+        tableView.constraint(by: [.height:nil,.width:nil], multiplier: 0.5)
         
         tableView.dataSource = self
         
