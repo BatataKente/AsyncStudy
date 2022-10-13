@@ -42,8 +42,7 @@ class View: UIViewController {
             
             let users = await call([User].self, from: url)
             self?.users = users ?? []
-            
-            DispatchQueue.main.async {self?.tableView.reloadData()}
+            self?.tableView.reloadData()
         }
     }
     
