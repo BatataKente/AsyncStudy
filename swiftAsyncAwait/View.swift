@@ -7,11 +7,6 @@
 
 import UIKit
 
-struct User: Codable {
-    
-    let name: String
-}
-
 class View: UIViewController {
 
     private static let cell = "Cell"
@@ -40,7 +35,7 @@ class View: UIViewController {
         
         Task.init {[weak self] in
             
-            let result = await call([User].self, from: url)
+            let result = await Network.call([User].self, from: url)
             
             switch result {
                 
@@ -54,29 +49,6 @@ class View: UIViewController {
                     print("ERROR: \(error)")
             }
             
-        }
-    }
-    
-    enum Errors: Error {
-        
-        case badEndPoint
-    }
-    
-    private func call<T: Codable>(_ what: T.Type, from url: URL?) async -> Result<T?, Error> {
-        
-        guard let url = url else {return .failure(Errors.badEndPoint)}
-        
-        do {
-            
-            let (data, response) = try await URLSession.shared.data(from: url)
-            print(response)
-            let users = try JSONDecoder().decode(what.self, from: data)
-            
-            return .success(users)
-        }
-        catch {
-            
-            return .failure(error)
         }
     }
 }
