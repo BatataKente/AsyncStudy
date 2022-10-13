@@ -40,15 +40,31 @@ class View: UIViewController {
         
         Task.init {[weak self] in
             
-            let users = await call([User].self, from: url)
-            self?.users = users ?? []
-            self?.tableView.reloadData()
+            let result = await call([User].self, from: url)
+            
+            switch result {
+                
+                case .success(let users):
+                    
+                    self?.users = users ?? []
+                    self?.tableView.reloadData()
+                    
+                case .failure(let error):
+                
+                    print("ERROR: \(error)")
+            }
+            
         }
     }
     
-    private func call<T: Codable>(_ what: T.Type, from url: URL?) async -> T? {
+    enum Errors: Error {
         
-        guard let url = url else {return nil}
+        case badEndPoint
+    }
+    
+    private func call<T: Codable>(_ what: T.Type, from url: URL?) async -> Result<T?, Error> {
+        
+        guard let url = url else {return .failure(Errors.badEndPoint)}
         
         do {
             
@@ -56,11 +72,11 @@ class View: UIViewController {
             print(response)
             let users = try JSONDecoder().decode(what.self, from: data)
             
-            return users
+            return .success(users)
         }
         catch {
             
-            print(error); return nil
+            return .failure(error)
         }
     }
 }
