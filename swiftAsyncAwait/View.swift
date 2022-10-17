@@ -12,6 +12,12 @@ class View: UIViewController {
     private static let cell = "Cell"
     private var users:[User] = []
     
+    private lazy var buttom: UIButton = Create.button("Go") {_ in
+        
+        self.navigationController?.pushViewController(ProductsView(),
+                                                      animated: true)
+    }
+    
     private let tableView: UITableView = {
         
         let tableView = UITableView()
@@ -26,10 +32,15 @@ class View: UIViewController {
         super.viewDidLoad()
         
         view.backgroundColor = .systemMint
-        view.addSubview(tableView)
+        view.addSubviews([tableView, buttom])
         
         tableView.constraint(to: view.safeAreaLayoutGuide,
-                             by: [.top:0, .leading:0, .trailing:0, .bottom:0])
+                             by: [.top:0, .leading:0, .trailing:0])
+        tableView.constraint(to: buttom,
+                             by: [.bottom:0])
+        
+        buttom.constraint(to: view.safeAreaLayoutGuide,
+                          by: [.bottom:0, .leading:0, .trailing:0])
         
         tableView.dataSource = self
         
