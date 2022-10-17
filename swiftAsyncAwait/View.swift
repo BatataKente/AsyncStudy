@@ -35,12 +35,12 @@ class View: UIViewController {
         view.addSubviews([tableView, buttom])
         
         tableView.constraint(to: view.safeAreaLayoutGuide,
-                             by: [.top:0, .leading:0, .trailing:0])
+                             by: [.top: 0, .leading: 0, .trailing: 0])
         tableView.constraint(to: buttom,
-                             by: [.bottom:0])
+                             by: [.bottom: NSLayoutConstraint.Attribute.top])
         
         buttom.constraint(to: view.safeAreaLayoutGuide,
-                          by: [.bottom:0, .leading:0, .trailing:0])
+                          by: [.bottom: 0, .leading: 0, .trailing: 0])
         
         tableView.dataSource = self
         
