@@ -10,7 +10,6 @@ import UIKit
 class View: UIViewController {
 
     private static let cell = "Cell"
-    private let url = URL(string: "https://jsonplaceholder.typicode.com/users")
     private var users:[User] = []
     
     private let tableView: UITableView = {
@@ -29,14 +28,14 @@ class View: UIViewController {
         view.backgroundColor = .systemMint
         view.addSubview(tableView)
         
-        tableView.constraint(by: [.centerX:0,.centerY:0])
-        tableView.constraint(by: [.height:nil,.width:nil], multiplier: 0.5)
+        tableView.constraint(to: view.safeAreaLayoutGuide,
+                             by: [.top:0, .leading:0, .trailing:0, .bottom:0])
         
         tableView.dataSource = self
         
         Task.init {[weak self] in
             
-            let result = await Network.call([User].self, from: url)
+            let result = await Network.call([User].self, from: Network.EndPoints.users)
             
             switch result {
                 

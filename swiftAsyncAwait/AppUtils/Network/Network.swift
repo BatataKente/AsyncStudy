@@ -9,6 +9,12 @@ import Foundation
 
 struct Network {
     
+    struct EndPoints {
+        
+        static let users = URL(string: "https://jsonplaceholder.typicode.com/users")
+        static let products = URL(string: "https://fakestoreapi.com/products")
+    }
+    
     private enum Errors: Error {
         
         case badEndPoint
