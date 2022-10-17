@@ -9,6 +9,13 @@ import UIKit
 
 struct Create {
     
+    static func image(_ image: UIImage? = nil) -> UIImageView {
+        
+        let image = UIImageView(image: image)
+        
+        return image
+    }
+    
     static func button(_ title: String? = nil,
                 handler: @escaping UIActionHandler) -> UIButton {
         

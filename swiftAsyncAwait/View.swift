@@ -46,7 +46,7 @@ class View: UIViewController {
         
         Task.init {[weak self] in
             
-            let result = await Network.call([User].self, from: Network.EndPoints.users)
+            let result = await Network.call([User].self, from: EndPoints.users)
             
             switch result {
                 

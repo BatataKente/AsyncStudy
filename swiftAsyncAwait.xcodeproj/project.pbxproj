@@ -18,6 +18,7 @@
 		14E18D2528FDCA3400EFB9B9 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E18D2428FDCA3400EFB9B9 /* Product.swift */; };
 		14E18D2728FDCC6B00EFB9B9 /* ProductsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E18D2628FDCC6B00EFB9B9 /* ProductsView.swift */; };
 		14E18D2928FDCD4E00EFB9B9 /* Create.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E18D2828FDCD4E00EFB9B9 /* Create.swift */; };
+		14E18D2B28FDD34400EFB9B9 /* EndPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E18D2A28FDD34400EFB9B9 /* EndPoints.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		14E18D2428FDCA3400EFB9B9 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		14E18D2628FDCC6B00EFB9B9 /* ProductsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsView.swift; sourceTree = "<group>"; };
 		14E18D2828FDCD4E00EFB9B9 /* Create.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Create.swift; sourceTree = "<group>"; };
+		14E18D2A28FDD34400EFB9B9 /* EndPoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoints.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +138,7 @@
 			children = (
 				1435A9BD28F873F800872E10 /* Models */,
 				1435A9BA28F8736E00872E10 /* Network.swift */,
+				14E18D2A28FDD34400EFB9B9 /* EndPoints.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -293,6 +296,7 @@
 				1435A9BB28F8736E00872E10 /* Network.swift in Sources */,
 				1435A9BF28F8740600872E10 /* User.swift in Sources */,
 				14E18D2728FDCC6B00EFB9B9 /* ProductsView.swift in Sources */,
+				14E18D2B28FDD34400EFB9B9 /* EndPoints.swift in Sources */,
 				1435A9C228F8769000872E10 /* UIView.swift in Sources */,
 				1435A98B28F85BF500872E10 /* SceneDelegate.swift in Sources */,
 				14E18D2528FDCA3400EFB9B9 /* Product.swift in Sources */,
